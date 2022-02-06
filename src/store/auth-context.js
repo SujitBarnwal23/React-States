@@ -37,4 +37,4 @@ export const AuthContextPovider = (props) => {
   );
 };
 
-export default { AuthContext, AuthContextPovider };
+export default AuthContext;

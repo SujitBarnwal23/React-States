@@ -27,7 +27,7 @@ const passwordReducer = (state, action) => {
 };
 
 const Login = (props) => {
-  const authCtx = useState(AuthContext);
+  const authCtx = useContext(AuthContext);
   // const [enteredEmail, setEnteredEmail] = useState("");
   // const [emailIsValid, setEmailIsValid] = useState();
   // const [enteredPassword, setEnteredPassword] = useState("");
