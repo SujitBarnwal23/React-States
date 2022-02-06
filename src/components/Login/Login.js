@@ -1,8 +1,9 @@
-import React, { useState, useEffect, useReducer } from "react";
+import React, { useState, useEffect, useReducer, useContext } from "react";
 
 import Card from "../UI/Card/Card";
 import classes from "./Login.module.css";
 import Button from "../UI/Button/Button";
+import AuthContext from "../../store/auth-context";
 // we can pass the function outside because inside this reducer function we dont need any data i.e. generated inside of the reducer function
 //it does not need to interact with anything inside of the component function
 // all the data it required will be passed into it when it is executed by react automatically
@@ -26,6 +27,7 @@ const passwordReducer = (state, action) => {
 };
 
 const Login = (props) => {
+  const authCtx = useState(AuthContext);
   // const [enteredEmail, setEnteredEmail] = useState("");
   // const [emailIsValid, setEmailIsValid] = useState();
   // const [enteredPassword, setEnteredPassword] = useState("");
@@ -100,7 +102,7 @@ const Login = (props) => {
     event.preventDefault();
     // props.onLogin(enteredEmail, enteredPassword);
     //using reducer
-    props.onLogin(emailState.value, passwordState.value);
+    authCtx.onLogin(emailState.value, passwordState.value);
   };
 
   return (
